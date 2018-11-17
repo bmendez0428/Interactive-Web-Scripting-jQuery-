@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<div id ='main_content' >
+<head>
+	<meta charset="utf-8">
+	<title>Currency Converter</title>
+	<script type="text/javascript">
+	  function convertInches()
+	  {
+		var inches = 0;
+		var measurementSelection;
+        var finalConversion;
+        var finalSelection; 
+        var outPut;
+
+		inches = document.getElementById('inches').value;
+        inchesParsed = parseFloat(inches);
+        
+        measurementSelection = document.getElementById('selMeasurement').value;
+        
+        if (measurementSelection == "feet")
+          {
+            finalConversion = inchesParsed * .0833;
+            finalSelection = "feet";
+           
+          }
+        else if(measurementSelection == "centimeters")
+          {
+            finalConversion = inchesParsed * 2.54;
+            finalSelection = "centimeters";
+          
+          }
+        else if (measurementSelection == "yards")
+          {
+            finalConversion = inchesParsed * .02778;
+            finalSelection = "yards";
+          }
+        //to catch any errors for user feed back
+        else
+          {
+            alert("Error, try again");
+          }
+        //Changes the finalConversion into a fixed number and changes the output into a string.
+        finalConversion = finalConversion.toFixed(2);
+        outPut = finalConversion + " " + finalSelection;
+        outPut = outPut.toString();
+        document.getElementById("results").innerHTML = outPut;
+        //alert(outPut + "test");
+	  }
+
+	</script>
+</head>
+<div id = "image">
+  <h4>Currency Converter</h4>
+  <img src = "corgi.jpg" alt="Cute picture of a Corgi puppy" width = 220px height=180px>
+  <hr> 
+  
+</div><!-- end of image div -->
+  <!-- FORM, STYLING, AND SELECTION --> 
+<div id = "buttons">
+<body>
+    <form name = "conversionInches" style="width:200px; background-color: #ccffcc; border:2px solid; padding:8px;">
+    <p> Enter Inches: <input type = "text" id="inches" stlye="width: 100px;"> </p>
+    <p> Select your conversion <select id="selMeasurement" name="measurement" >
+      <option value ="feet">Feet</option>
+      <option value ="centimeters">Centimeters</option>
+      <option value = "yards">Yards</option>
+  </select>
+      </p>
+      <p> <input type="button" value="Convert" onclick="convertInches()"> </p>
+      
+  </form>
+<div id = "results"></div>
+</body>
+    </div><!-- end of results div --> 
+    </div>
+</html>

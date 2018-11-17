@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My First jQuery Page in IT 238</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script>
+$(document).ready(function()
+{
+});
+
+function fadeFood()
+{
+  //fade images of the food h2s
+  $('#desserts').fadeOut(1000).fadeIn(1000);
+  $('#drinks').fadeOut(1000).fadeIn(1000);
+}
+
+function fadeAboutMe()
+{
+  //fade the about me h2s
+  $('#text_content h2').fadeOut(1000).fadeIn(1000);
+}
+
+function hideIce()
+{
+  //hide all items with 'ice' in them
+  //$("#food_content:contains(Iced Tea)").hide();
+  
+}
+  
+function allVisable()
+{
+  //make all items visible
+  $('#food_content li:first').show();
+  $('#dessert_list li:first').show();
+}
+</script>
+</head>
+
+<body>
+<div id="text_content">
+  <h1>My First jQuery Page</h1>
+  <h2>A Little Bit About Me</h2>
+  <p> I was born on a dark and stormy night...</p>
+  <h2>This I Like</h2>
+  <p>I like blue shoes and pink canoes...</p>
+  </div> <!-- end of 'text-content' div -->
+<div id="food_content">
+  <h2 id = "drinks">Drinks</h2>
+  <ol id = drinks_list>
+    <li>Coffee</li>
+    <li>Hot Tea</li>
+    <li>Iced Tea</li>
+    <li>Soda</li>
+  </ol>
+  <h2 id = "desserts">Desserts</h2>
+  <ol id= "dessert_list">
+    <li>Cake</li>
+    <li>Cookies</li>
+    <li>Ice Cream</li>
+  </ol> 
+<hr>
+  </div>   <!-- end 'food_content' div -->
+<div id="radio_bottons">
+ Fade the 'Food H2s <input type="radio" name="option" onclick="fadeFood()"> <br>
+ Fade the 'About Me' H2s <input type="radio" name="option" onclick="fadeAboutMe()"> <br>
+ Hide the first item under drinks <input type="radio" name="option" onclick="$('#food_content li:first').hide()"> <br>
+ Hide the first item under desserts <input type="radio" name="option" onclick=" $('#dessert_list li:first').hide()"> <br>
+ Hide all list items with the word 'Ice' in them: <input type="radio" name="option" onlick="hideIce()"> <br>
+ Make all list items visible <input type="radio" name="option" onclick="allVisable()"> <br>
+	</div>  <!-- end 'radio_bottons' div -->
+</body>
+</html>
