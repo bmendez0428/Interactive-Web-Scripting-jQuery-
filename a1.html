@@ -9,43 +9,43 @@
 	  {
 		var inches = 0;
 		var measurementSelection;
-        var finalConversion;
-        var finalSelection; 
-        var outPut;
+		var finalConversion;
+		var finalSelection; 
+		var outPut;
 
 		inches = document.getElementById('inches').value;
-        inchesParsed = parseFloat(inches);
+        	inchesParsed = parseFloat(inches);
         
-        measurementSelection = document.getElementById('selMeasurement').value;
-        
-        if (measurementSelection == "feet")
-          {
-            finalConversion = inchesParsed * .0833;
-            finalSelection = "feet";
-           
-          }
-        else if(measurementSelection == "centimeters")
-          {
-            finalConversion = inchesParsed * 2.54;
-            finalSelection = "centimeters";
-          
-          }
-        else if (measurementSelection == "yards")
-          {
-            finalConversion = inchesParsed * .02778;
-            finalSelection = "yards";
-          }
-        //to catch any errors for user feed back
-        else
-          {
-            alert("Error, try again");
-          }
-        //Changes the finalConversion into a fixed number and changes the output into a string.
-        finalConversion = finalConversion.toFixed(2);
-        outPut = finalConversion + " " + finalSelection;
-        outPut = outPut.toString();
-        document.getElementById("results").innerHTML = outPut;
-        //alert(outPut + "test");
+		measurementSelection = document.getElementById('selMeasurement').value;
+
+		if (measurementSelection == "feet")
+		  {
+		    finalConversion = inchesParsed * .0833;
+		    finalSelection = "feet";
+
+		  }
+		else if(measurementSelection == "centimeters")
+		  {
+		    finalConversion = inchesParsed * 2.54;
+		    finalSelection = "centimeters";
+
+		  }
+		else if (measurementSelection == "yards")
+		  {
+		    finalConversion = inchesParsed * .02778;
+		    finalSelection = "yards";
+		  }
+		//to catch any errors for user feed back
+		else
+		  {
+		    alert("Error, try again");
+		  }
+		//Changes the finalConversion into a fixed number and changes the output into a string.
+		finalConversion = finalConversion.toFixed(2);
+		outPut = finalConversion + " " + finalSelection;
+		outPut = outPut.toString();
+		document.getElementById("results").innerHTML = outPut;
+		//alert(outPut + "test");
 	  }
 
 	</script>
